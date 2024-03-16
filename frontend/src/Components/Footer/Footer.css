@@ -1,0 +1,37 @@
+footer{
+    background: green;
+}
+footer div{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer-left{
+    display: block;
+    
+}
+.footer-left h4,.middle-footer h4, .footer-right h4{
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+.middle-footer{
+    display: block;
+
+}
+.footer-right{
+    display: block;
+
+}
+div hr{
+    border: 1px solid black;
+}
+div .bottom-footer{
+    text-align: center;
+    font-weight: 300;
+    color: #000;
+    padding-bottom: 40px;
+
+    
+}
