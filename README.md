@@ -16,7 +16,7 @@ Install the dependencies
 2. `npm install react-router-dom`
 3. `npm start`, the server opens at `localhost:3000`
 
-Now you can access the frontend and interatct with the system
+Now you can access the frontend and interact with the system
 
 
 

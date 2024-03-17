@@ -1,4 +1,4 @@
-.login-div{
+.register-div{
     background: #F7EEDD;
     height: 60vh;
     margin-left: 0px;
@@ -11,9 +11,9 @@
     justify-content: center;
     align-items: center;
 }
-.login-form{
+.register-form{
     width: 700px;
-    height: 300px;
+    height: 400px;
     display: block;
     margin-left: 0px;
     margin-right: 0px;
@@ -26,7 +26,7 @@
     background: #58A399;
     color: #FF204E;
 }
-.login-form h1{
+.register-form h1{
     font-weight: 700;
     font-size: 40px;
     text-transform: uppercase;
@@ -46,26 +46,26 @@
     background: #fff;
     color: #000;
 }
-.login-page{
+.register-page{
     display: flex;
     align-items: center;
     padding: 10px;
 }
-.login-page button{
+.register-page button{
     margin-right: 30px;
     font-weight: 600;
     text-transform: uppercase;
 
 }
-.login-page p{
+.register-page p{
     font-size: 17px;
     font-weight: 500;
 }
-.login-page  p span{
+.register-page  p span{
     color: #430A5D;
     font-size: 20px;
 }
-.login-page  p a{
+.register-page  p a{
     color: #222831;
     font-size: 18px;
     text-decoration: none;

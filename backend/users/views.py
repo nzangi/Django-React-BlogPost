@@ -23,7 +23,7 @@ def register_user(request):
                 registerUserSerializer.save()
             return Response({'message':'Account was created successfully!'},status=status.HTTP_200_OK)
         else:
-            return Response({'message':'Something went wrong. Try again!'},status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error':'Something went wrong. Try again!'},status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -40,7 +40,7 @@ def login_user(request):
             token,_ = Token.objects.get_or_create(user=user)
             return Response({'message':'You have sucessfully logged in !','token':token.key},status=status.HTTP_200_OK)
         else:
-            return Response({'Error':'Invlaid log in credentials'},status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error':'Invlaid log in credentials'},status=status.HTTP_400_BAD_REQUEST)
         
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])

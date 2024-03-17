@@ -1,5 +1,6 @@
 footer{
     background: green;
+    margin-bottom: 0;
 }
 footer div{
     padding: 20px;

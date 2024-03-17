@@ -21,6 +21,8 @@ const Navbar = () => {
       <div className='right-nav'>
         <a className='signout' href='#'>Sign Out</a>
         <Link to='/login'>Sign In</Link>
+        <Link to='/register'>Register</Link>
+
 
       </div>
       
