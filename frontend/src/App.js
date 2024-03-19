@@ -19,7 +19,6 @@ function App() {
           <Route path='/newpost' element={<UserNewPost/>}/>
           <Route path='/login' element={<LoginUser/>}/>
           <Route path='/register' element={<RegisterUser/>}/>
-
           
         </Routes>
         <Footer/>
