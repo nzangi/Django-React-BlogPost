@@ -8,7 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('')
 
   const [error, setError] = useState('')
-  const [logginIn, setIsLogginIn] = useState(false)
+  const [loggedIn, setIsLogginIn] = useState(false)
   const navigate = useNavigate()
 
   const handleLogin = async (e) =>{
@@ -19,16 +19,23 @@ const Login = () => {
         const response = await axios.post(`http://127.0.0.1:8000/users/login/`,{
             username,password
         })
+        if (response.status === 200) {
+            localStorage.setItem('isLoggedIn', true); // Store login status
+            navigate('/home')
+        }else{
+            setError('Login failed');
+        }
         setError(response.data.error)
-        navigate('/')
     } catch (error) {
-        setError('Could not handle register')
+        setError('Could not handle Sign In')
         console.log('Error is :',error);
         
+    }finally{
+        setTimeout(() => {
+            setIsLogginIn(false);
+        }, 1000);
     }
-    setTimeout(() => {
-        setIsLogginIn(false);
-    }, 1000);
+    
 }
 
 
@@ -37,7 +44,7 @@ const Login = () => {
     <div className='login-div'>
             <div className='container'>
                 {error && <p className='error-message'>{error}</p>}
-                <form onSubmit={handleLogin} className='login-form' >
+                <form onSubmit={handleLogin} className='login-form'>
                     <h1>Login</h1>
                     <div className='form-group'>
                         <input class="form-control" type="text" placeholder="Enter Username" value={username} onChange={(e)=>setUsername(e.target.value)}/>
@@ -46,7 +53,7 @@ const Login = () => {
 
                     <div className='login-page'>
                     <button className='btn btn-primary'>
-                        { logginIn ? 'Logging In ...':'Login'}
+                        { loggedIn ? 'Logging In ...':'Login'}
                     </button>
                         <p>Do not have have an account? <span>Register Here</span> <Link to='/register'>Sign Up</Link></p>
                     </div>

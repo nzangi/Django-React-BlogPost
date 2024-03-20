@@ -1,5 +1,5 @@
 import './App.css';
-import  {Route,Routes,BrowserRouter} from 'react-router-dom'
+import  {Route,Routes,BrowserRouter,Navigate} from 'react-router-dom'
 import Footer from './Components/Footer/Footer';
 import BlogsPost from './Pages/BlogsPost';
 import Navbar from './Components/Navbar/Navbar';
@@ -14,12 +14,12 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path='/' element={<BlogsPost/>}/>
+          <Route path='/' element={<Navigate to='/login'/>}/>
+          <Route path='/login' element={<LoginUser/>}/>
+          <Route path='/home' element={<BlogsPost/>}/>
           <Route path='/account' element={<UserAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
-          <Route path='/login' element={<LoginUser/>}/>
           <Route path='/register' element={<RegisterUser/>}/>
-          
         </Routes>
         <Footer/>
       </BrowserRouter>

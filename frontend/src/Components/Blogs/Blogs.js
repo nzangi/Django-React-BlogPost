@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Blog from '../Blog/Blog'
 import axios from 'axios'
+import './Blogs.css'
 
 
 const Blogs = () => {
@@ -13,7 +14,7 @@ const Blogs = () => {
     try {
       const response = await axios.get(`http://127.0.0.1:8000/blog/`)
       //  title, content, date_posted, author, image
-      console.log('Response data:', response.data.data); // Log the response data
+      // console.log('Response data:', response.data.data); // Log the response data
       setAllPost(response.data.data)
     } catch (error) {
       setError('Could not handle post loading')
@@ -28,7 +29,7 @@ const Blogs = () => {
   },[])
  
   return (
-    <div>
+    <div className='blogs'>
       <h1>All Posts</h1>
       {error && <p>{error}</p>}
       {
@@ -37,8 +38,6 @@ const Blogs = () => {
 
         })
       }
-
-
 
     </div>
   )
