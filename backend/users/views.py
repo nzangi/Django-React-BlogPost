@@ -29,14 +29,14 @@ def register_user(request):
 @permission_classes([AllowAny])
 def login_user(request):
     if request.method == 'POST':
+        # Get Username and passowrd
         username = request.data.get('username')
         password = request.data.get('password')
-        # user = None
-        # print(username,password)
-        user = User.objects.get(username=username)
-        if not user:
-            user = authenticate(username=username,password=password)
-        if user:
+        # Login in user with the passord nad username
+        user = authenticate(request,username=username,password=password)
+
+        # if user exists in db, assign token else show error message
+        if user is not None:
             token,_ = Token.objects.get_or_create(user=user)
             return Response({'message':'You have sucessfully logged in !','token':token.key},status=status.HTTP_200_OK)
         else:
@@ -46,6 +46,7 @@ def login_user(request):
 @permission_classes([IsAuthenticated])
 def logout_user(request):
     if request.method == 'POST':
+        # delete the looged user auth token
         try:
             request.user.auth_token.delete()
             return Response({'message':'You have sucessfully logged out!'})

@@ -22,9 +22,15 @@
     background: #A8CD9F;
 
 }
-.error-message{
-    background: #58A399;
+.login-error-message{
     color: #FF204E;
+    text-align: center;
+    
+}
+.message{
+    color: #000;
+    text-align: center;
+    
 }
 .login-form h1{
     font-weight: 700;

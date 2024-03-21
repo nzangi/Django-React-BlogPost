@@ -16,6 +16,7 @@ const Navbar = () => {
       setIsLoggedIn(true)
     }
   },[])
+  
 
   const handleSignOutUser = async () =>{
     try {
