@@ -42,6 +42,7 @@ def login_user(request):
         else:
             return Response({'error':'Invlaid log in credentials'},status=status.HTTP_400_BAD_REQUEST)
         
+        
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def logout_user(request):

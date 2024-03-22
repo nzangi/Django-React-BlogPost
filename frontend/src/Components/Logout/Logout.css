@@ -1,0 +1,29 @@
+
+.logout{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-logout{
+    width: 400px;
+    background: #627254;
+    padding: 30px;
+    border-radius: 10px;
+}
+.form-logout h6{
+    margin-bottom: 30px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logout-message{
+    color: #FF204E;
+    text-align: center;
+}
+.logout-error{
+    color: #000;
+    text-align: center;
+}

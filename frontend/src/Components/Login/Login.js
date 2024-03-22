@@ -24,17 +24,18 @@ const Login = () => {
 
             setMessage(response.data.message)
 
-            console.log('API response:', response.data.message, response.data.token);
             // Log the entire response for debugging
-            console.log('API response:', response.data.error);  // Log the entire response for debugging
-
         // STORE THE TOKEN WHICH WILL ENABLE USER TO USE THE PAGE
+            const responseToken = response.data.token
+            console.log('User Token:',responseToken);
+
+
         
             if (response.status === 200) {
-                localStorage.setItem('isLoggedIn', true); // Store login status
+                localStorage.setItem('responseToken',responseToken); // Store login status
                 setTimeout(() => {
                     navigate('/home')
-                }, 3000);
+                }, 1000);
 
             }
 
@@ -51,7 +52,6 @@ const Login = () => {
         }
 
     }
-
 
 
     return (

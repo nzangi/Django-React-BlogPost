@@ -7,6 +7,7 @@ import UserAccount from './Pages/UserAccount';
 import UserNewPost from './Pages/UserNewPost';
 import LoginUser from './Pages/LoginUser';
 import RegisterUser from './Pages/RegisterUser';
+import LogoutUser from './Pages/LogoutUser';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path='/account' element={<UserAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
           <Route path='/register' element={<RegisterUser/>}/>
+          <Route path='/logout' element={<LogoutUser/>}/>
+
         </Routes>
         <Footer/>
       </BrowserRouter>
