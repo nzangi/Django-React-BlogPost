@@ -10,13 +10,12 @@ const Login = () => {
     const [error, setError] = useState('')
     const [message, setMessage] = useState('')
 
-    const [loggedIn, setIsLogginIn] = useState(false)
+    const [loggedInUser, setLoggedInUser] = useState(false)
     const navigate = useNavigate()
 
     const handleLogin = async (e) => {
         e.preventDefault()
-        setIsLogginIn(true)
-
+        setLoggedInUser(false)
         try {
             const response = await axios.post(`http://127.0.0.1:8000/users/login/`, {
                 username, password
@@ -26,15 +25,14 @@ const Login = () => {
 
             // Log the entire response for debugging
         // STORE THE TOKEN WHICH WILL ENABLE USER TO USE THE PAGE
-            const responseToken = response.data.token
-            console.log('User Token:',responseToken);
+            const userLoginResponseToken = response.data.token
+            console.log('User Token:',userLoginResponseToken);
 
-
-        
             if (response.status === 200) {
-                localStorage.setItem('responseToken',responseToken); // Store login status
+                localStorage.setItem('userLoginResponseToken',userLoginResponseToken); // Store login status
+                // setIsLogginIn(true);
                 setTimeout(() => {
-                    navigate('/home')
+                    navigate('/home');
                 }, 1000);
 
             }
@@ -47,7 +45,7 @@ const Login = () => {
 
         } finally {
             setTimeout(() => {
-                setIsLogginIn(false);
+                setLoggedInUser(false);
             }, 1000);
         }
 
@@ -68,7 +66,7 @@ const Login = () => {
 
                     <div className='login-page'>
                         <button className='btn btn-primary'>
-                            {loggedIn ? 'Logging In ...' : 'Login'}
+                            {loggedInUser ? 'Logging In ...' : 'Login'}
                         </button>
                         <p>Do not have have an account? <span>Register Here</span> <Link to='/register'>Sign Up</Link></p>
                     </div>

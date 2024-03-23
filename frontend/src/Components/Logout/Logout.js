@@ -8,7 +8,7 @@ const Logout = () => {
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
 
-    const token = localStorage.getItem('responseToken')
+    const token = localStorage.getItem('userLoginResponseToken')
 
     const signOutUser = async () => {
         try {
@@ -19,7 +19,16 @@ const Logout = () => {
             });
             setMessage(response.data.message);
             // clear the token
-            localStorage.removeItem('responseToken');
+            localStorage.removeItem('userLoginResponseToken');
+            if(token){
+                console.log(token);
+
+            }else{
+                console.log('No token');
+
+            }
+
+
 
             setTimeout(() => {
                 navigate('/login')
