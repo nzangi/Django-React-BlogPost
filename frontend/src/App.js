@@ -8,6 +8,7 @@ import UserNewPost from './Pages/UserNewPost';
 import LoginUser from './Pages/LoginUser';
 import RegisterUser from './Pages/RegisterUser';
 import LogoutUser from './Pages/LogoutUser';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
@@ -17,12 +18,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Navigate to='/login'/>}/>
           <Route path='/login' element={<LoginUser/>}/>
-          <Route path='/home' element={<BlogsPost/>}/>
+          <Route path='/posts' element={<BlogsPost/>}/>
           <Route path='/account' element={<UserAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
           <Route path='/register' element={<RegisterUser/>}/>
           <Route path='/logout' element={<LogoutUser/>}/>
-
         </Routes>
         <Footer/>
       </BrowserRouter>

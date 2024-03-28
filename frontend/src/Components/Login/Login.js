@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Login.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { AuthContext } from '../../Context/AuthContext'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -10,7 +11,8 @@ const Login = () => {
     const [error, setError] = useState('')
     const [message, setMessage] = useState('')
 
-    const [loggedInUser, setLoggedInUser] = useState(false)
+    const [loggedInUser, setLoggedInUser] = useState(false);
+    const {setIsLoggedIn} = useContext(AuthContext);
     const navigate = useNavigate()
 
     const handleLogin = async (e) => {
@@ -32,7 +34,8 @@ const Login = () => {
                 localStorage.setItem('userLoginResponseToken',userLoginResponseToken); // Store login status
                 // setIsLogginIn(true);
                 setTimeout(() => {
-                    navigate('/home');
+                    setIsLoggedIn(true)
+                    navigate('/posts');
                 }, 1000);
 
             }

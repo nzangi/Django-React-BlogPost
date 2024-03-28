@@ -1,12 +1,15 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useContext} from 'react'
 import './Logout.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { AuthContext } from '../../Context/AuthContext'
 
 const Logout = () => {
     const [error, setError] = useState('')
     const [message, setMessage] = useState('')
     const navigate = useNavigate()
+    const {setIsLoggedIn} = useContext(AuthContext);
+
 
     const token = localStorage.getItem('userLoginResponseToken')
 
@@ -20,17 +23,9 @@ const Logout = () => {
             setMessage(response.data.message);
             // clear the token
             localStorage.removeItem('userLoginResponseToken');
-            if(token){
-                console.log(token);
-
-            }else{
-                console.log('No token');
-
-            }
-
-
-
+        
             setTimeout(() => {
+                setIsLoggedIn(false);
                 navigate('/login')
             }, 1000);
             
