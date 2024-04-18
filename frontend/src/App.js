@@ -9,6 +9,7 @@ import LoginUser from './Pages/LoginUser';
 import RegisterUser from './Pages/RegisterUser';
 import LogoutUser from './Pages/LogoutUser';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
+import BlogDetail from './Pages/BlogDetail';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Navigate to='/login'/>}/>
           <Route path='/login' element={<LoginUser/>}/>
           <Route path='/posts' element={<BlogsPost/>}/>
+          <Route path='/post/:postId' element={<BlogDetail/>}/>
           <Route path='/account' element={<UserAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
           <Route path='/register' element={<RegisterUser/>}/>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Blog from '../Blog/Blog'
 import axios from 'axios'
 import './Blogs.css'
+import { Link } from 'react-router-dom'
 
 
 const Blogs = () => {
@@ -34,7 +35,11 @@ const Blogs = () => {
       {error && <p>{error}</p>}
       {
         allPosts.map((post,index)=>{
-          return <Blog key={index} id={post.id} image={post.image} author={post.author} date_posted={post.date_posted} title={post.title} content={post.content} />
+          return (
+            <Link to={`/post/${post.id}`} key={index}>
+                <Blog key={index} id={post.id} image={post.image} author={post.author} date_posted={post.date_posted} title={post.title} content={post.content} />
+            </Link>
+        )
 
         })
       }
