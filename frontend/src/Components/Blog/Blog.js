@@ -20,6 +20,8 @@ const Blog = (props) => {
             <h6>{props.title}</h6>
             <p>{props.content}</p>
         </div>
+        <a>Edit</a>
+        <a>Delete</a>
         
     </div>
   )

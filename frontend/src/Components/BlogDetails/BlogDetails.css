@@ -1,0 +1,35 @@
+.blog-details{
+    margin-left: 30px;
+    width: 50%;
+}
+.post-detail{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.form{
+    width: 100%;
+    border: 1 solid orange; 
+    height: 100px;
+    outline: none;
+    border: none;
+    display: block;
+    margin-bottom: 100px;
+}
+textarea{
+    width: 100%;
+    min-height: 100px;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+button{
+    margin-bottom: 40px;
+    background: linear-gradient(250deg,#d8d8d8 -6.8%,#d315d3 100.6%);
+    padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+}

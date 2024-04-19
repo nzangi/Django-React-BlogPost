@@ -11,7 +11,7 @@ import { AuthContext } from '../../Context/AuthContext'
       <nav>
         <div className='left-nav'>
           <h1>BlogsPost</h1>
-          <img src={blogpost_img} alt='blogpost image' />
+          <Link to={`/posts`}><img src={blogpost_img} alt='blogpost image' /></Link>
         </div>
 
         <div className='middle-nav'>
