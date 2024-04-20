@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Blog.css'
 import { formatDistanceToNow } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const Blog = (props) => {
-    // console.log('Blog props:', props); // Log props to ensure they are received correctly
+  const postAuthor = localStorage.getItem("userLoginUsername");
+  const [isPostAuthor,setIsPostAuthor] = useState(false)
+
+  
+
+  useEffect(()=>{
+    if (props.author === postAuthor){
+      setIsPostAuthor(true)
+    }
+  },[props.author])
+
   return (
     <div className='blog'>
         <div className='profile'>
@@ -20,8 +31,17 @@ const Blog = (props) => {
             <h6>{props.title}</h6>
             <p>{props.content}</p>
         </div>
-        <a>Edit</a>
-        <a>Delete</a>
+        <div className='edit-delete'>
+        {
+          isPostAuthor ? (
+            <>
+                <Link to={`/post/editpost/${props.id}`}>Edit</Link>
+                <Link to={`/post/deletepost/${props.id}`}>Delete</Link>
+            </>
+              
+          ) : null
+        }
+        </div>
         
     </div>
   )

@@ -10,6 +10,8 @@ import RegisterUser from './Pages/RegisterUser';
 import LogoutUser from './Pages/LogoutUser';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import BlogDetail from './Pages/BlogDetail';
+import EditPost from './Components/EditPost/EditPost';
+import DeletePost from './Components/BlogDetails/DeletePost/DeletePost';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path='/login' element={<LoginUser/>}/>
           <Route path='/posts' element={<BlogsPost/>}/>
           <Route path='/post/:postId' element={<BlogDetail/>}/>
+          <Route path='/post/editpost/:postId' element={<EditPost/>}/>
+          <Route path='/post/deletepost/:postId' element={<DeletePost/>}/>
           <Route path='/account' element={<UserAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
           <Route path='/register' element={<RegisterUser/>}/>

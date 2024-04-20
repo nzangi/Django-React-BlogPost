@@ -38,7 +38,6 @@ const Blogs = () => {
           return (
             <Link className='link' to={`/post/${post.id}`} key={index}>
                 <Blog key={index} id={post.id} image={post.image} author={post.author} date_posted={post.date_posted} title={post.title} content={post.content} />
-                
             </Link>
         )
 

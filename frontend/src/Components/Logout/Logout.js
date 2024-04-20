@@ -21,8 +21,10 @@ const Logout = () => {
                 }
             });
             setMessage(response.data.message);
-            // clear the token
+            // clear the token  userLoginUsername
             localStorage.removeItem('userLoginResponseToken');
+            localStorage.removeItem('userLoginUsername');
+
         
             setTimeout(() => {
                 setIsLoggedIn(false);

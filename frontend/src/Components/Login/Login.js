@@ -24,14 +24,19 @@ const Login = () => {
             })
 
             setMessage(response.data.message)
+            console.log(response.data);
 
             // Log the entire response for debugging
         // STORE THE TOKEN WHICH WILL ENABLE USER TO USE THE PAGE
             const userLoginResponseToken = response.data.token
+            const userLoginUsername = response.data.username
+
             console.log('User Token:',userLoginResponseToken);
 
             if (response.status === 200) {
                 localStorage.setItem('userLoginResponseToken',userLoginResponseToken); // Store login status
+                localStorage.setItem('userLoginUsername',userLoginUsername); // Store login status
+
                 // setIsLogginIn(true);
                 setTimeout(() => {
                     setIsLoggedIn(true)

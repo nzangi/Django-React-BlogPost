@@ -38,7 +38,7 @@ def login_user(request):
         # if user exists in db, assign token else show error message
         if user is not None:
             token,_ = Token.objects.get_or_create(user=user)
-            return Response({'message':'You have sucessfully logged in !','token':token.key},status=status.HTTP_200_OK)
+            return Response({'message':'You have sucessfully logged in !','username':username,'token':token.key},status=status.HTTP_200_OK)
         else:
             return Response({'error':'Invlaid log in credentials'},status=status.HTTP_400_BAD_REQUEST)
         
