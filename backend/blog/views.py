@@ -69,7 +69,7 @@ def update_post(request,post_id):
                 return Response(post_serializer.data)
             else:
                 # If the author does not match, returning an unauthorized response
-                return Response({'message':'You cannot update this post'},status=status.HTTP_401_UNAUTHORIZED)
+                return Response({'error':'You cannot update this post'},status=status.HTTP_401_UNAUTHORIZED)
         else:
             # If the data provided in the request is not valid, returning a bad request response with error details
             return Response(post_serializer.errors,status=status.HTTP_400_BAD_REQUEST)

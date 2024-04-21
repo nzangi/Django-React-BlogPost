@@ -35,8 +35,8 @@ const Blog = (props) => {
         {
           isPostAuthor ? (
             <>
-                <Link to={`/post/editpost/${props.id}`}>Edit</Link>
-                <Link to={`/post/deletepost/${props.id}`}>Delete</Link>
+                <Link className='edit-button' to={`/post/editpost/${props.id}`}>Edit</Link>
+                <Link className='delete-button' to={`/post/deletepost/${props.id}`}>Delete</Link>
             </>
               
           ) : null

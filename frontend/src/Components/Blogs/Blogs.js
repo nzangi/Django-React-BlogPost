@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import Blog from '../Blog/Blog'
 import axios from 'axios'
 import './Blogs.css'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../Context/AuthContext'
 
 
 const Blogs = () => {
   const [allPosts, setAllPost] = useState([])
   const [error, setError] = useState('')
+  const {setIsLoggedIn} = useContext(AuthContext);
+
 
 
   const fetchAllPost = async () => {
@@ -17,6 +20,7 @@ const Blogs = () => {
       //  title, content, date_posted, author, image
       // console.log('Response data:', response.data.data); // Log the response data
       setAllPost(response.data.data)
+      setIsLoggedIn(true)
     } catch (error) {
       setError('Could not handle post loading')
       console.log('Error is :', error);

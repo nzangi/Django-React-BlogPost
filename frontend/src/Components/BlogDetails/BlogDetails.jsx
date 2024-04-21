@@ -35,7 +35,7 @@ const BlogDetails = () => {
         }
       );
       setPost(response.data);
-      setIsLoggedIn(true)
+      setIsLoggedIn(true);
 
     } catch (error) {
       setError(error.response.data.error);
