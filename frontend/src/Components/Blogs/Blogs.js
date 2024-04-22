@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Blog from '../Blog/Blog'
 import axios from 'axios'
 import './Blogs.css'
@@ -9,7 +9,7 @@ import { AuthContext } from '../../Context/AuthContext'
 const Blogs = () => {
   const [allPosts, setAllPost] = useState([])
   const [error, setError] = useState('')
-  const {setIsLoggedIn} = useContext(AuthContext);
+  const { setIsLoggedIn } = useContext(AuthContext);
 
 
 
@@ -29,24 +29,30 @@ const Blogs = () => {
 
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchAllPost()
-  },[])
- 
+  }, [])
+
   return (
     <div className='blogs'>
-      <h1>All Posts</h1>
-      {error && <p>{error}</p>}
-      {
-        allPosts.map((post,index)=>{
-          return (
-            <Link className='link' to={`/post/${post.id}`} key={index}>
+      <div>
+        <h1>All Posts</h1>
+        {error && <p>{error}</p>}
+        {
+          allPosts.map((post, index) => {
+            return (
+              <Link className='link' to={`/post/${post.id}`} key={index}>
                 <Blog key={index} id={post.id} image={post.image} author={post.author} date_posted={post.date_posted} title={post.title} content={post.content} />
-            </Link>
-        )
+              </Link>
+            )
 
-        })
-      }
+          })
+        }
+      </div>
+      <div>
+        
+      </div>
+
 
     </div>
   )

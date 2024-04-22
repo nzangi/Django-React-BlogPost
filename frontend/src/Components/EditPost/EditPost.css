@@ -1,0 +1,39 @@
+.edit-post{
+    min-height: 80vh;
+
+}
+.error-message{
+    text-align: center;
+    color: #fff;
+    background: #D20062;
+}
+.editpost-form{
+    height: 300px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border: 1px solid #0C0C0C;
+    border-radius: 30px;
+    background: #F2613F;
+}
+.editpost-form h2{
+    padding: 4px 8px;
+    text-align: center;
+}
+.editpost-form input{
+    width: 100%;
+    padding: 10px 15px;
+    outline: none;
+    margin-bottom: 4px;
+}
+.editpost-form textarea{
+    width: 100%;
+}
+.editpost-form button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+}

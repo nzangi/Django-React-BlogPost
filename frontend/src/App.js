@@ -11,7 +11,7 @@ import LogoutUser from './Pages/LogoutUser';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 import BlogDetail from './Pages/BlogDetail';
 import EditPost from './Components/EditPost/EditPost';
-import DeletePost from './Components/BlogDetails/DeletePost/DeletePost';
+import DeletePost from './Components/DeletePost/DeletePost';
 
 function App() {
   return (

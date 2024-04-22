@@ -5,5 +5,4 @@ urlpatterns = [
     path('post/',post_post,name='post'),
     path('update_post/<int:post_id>/',update_post,name='update_post'),
     path('delete_post/<int:post_id>/',delete_post,name='delete_post'),
-
 ]

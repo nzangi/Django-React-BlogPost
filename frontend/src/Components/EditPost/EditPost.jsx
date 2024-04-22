@@ -49,15 +49,17 @@ const EditPost = () => {
     }
 
     try {
-      const response = await axios.post(
-        `http://127.0.0.1:8000/blog/update_post/${postId}`,
-        { title: post.title, content: post.content },
+      const response = await axios.put(
+        `http://127.0.0.1:8000/blog/update_post/${postId}/`,
+        { title: post.title,content: post.content },
         {
           headers: {
             Authorization: `Token ${token}`,
           },
         }
       );
+      setIsLoggedIn(true);
+
 
       navigate("/posts");
     } catch (error) {
@@ -69,7 +71,8 @@ const EditPost = () => {
     <div className="edit-post">
       {error && <p className="error-message">{error}</p>}
       {post ? (
-        <form onSubmit={handlePostUpdate}>
+        <form onSubmit={handlePostUpdate} className="editpost-form">
+          <h2>Update Your Post</h2>
           <input
             type="text"
             value={post.title}

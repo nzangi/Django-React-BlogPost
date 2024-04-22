@@ -15,7 +15,8 @@ Install the dependencies
 1. `npm install`
 2. `npm install react-router-dom`
 3. `npm install axios`
-4. `npm start`, the server opens at `localhost:3000`
+4. `npm install date-fns`
+5. `npm start`, the server opens at `localhost:3000`
 
 Now you can access the frontend and interact with the system
 
