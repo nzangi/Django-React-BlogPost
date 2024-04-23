@@ -10,7 +10,7 @@ import { AuthContext } from '../../Context/AuthContext'
     return (
       <nav>
         <div className='left-nav'>
-          <h1>BlogsPost</h1>
+        <Link to={`/posts`}><h1>BlogsPost</h1></Link>
           <Link to={`/posts`}><img src={blogpost_img} alt='blogpost image' /></Link>
         </div>
 

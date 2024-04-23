@@ -36,11 +36,7 @@ const EditPost = () => {
     }
   };
 
-  // if(token){
-  //   setIsLoggedIn(true);
-  // }else{
-  //   setIsLoggedIn(false);
-  // }
+
 
   const handlePostUpdate = async (e) => {
     e.preventDefault();

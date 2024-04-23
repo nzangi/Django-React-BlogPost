@@ -53,6 +53,14 @@ def comment_to_update(request,comment_id):
     except comment_to_update.DoesNotExist:
         return Response({'message':'There is no such comment'},status=status.HTTP_404_NOT_FOUND)
     
+    if request.method == 'GET':
+        # Creating a serializer instance for the post to be updated
+        # postSerializer = PostSerializer()
+
+        comment = CommentSerializer(comment_to_update)
+        # Returning the post data in the response
+        return Response(comment.data,status=status.HTTP_200_OK)
+    
     if request.method == 'PUT':
         comment_serializer =CommentSerializer(comment_to_update,data=request.data)
         if comment_serializer.is_valid():
@@ -62,7 +70,7 @@ def comment_to_update(request,comment_id):
             else:
                 return Response({'message':'You cannot update this comment'},status=status.HTTP_401_UNAUTHORIZED)
 
-        return Response({'errors':comment_serializer._errors},status=status.HTTP_400_BAD_REQUEST)
+        return Response({'error':comment_serializer._errors},status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET','DELETE'])

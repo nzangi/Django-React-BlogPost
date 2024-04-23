@@ -113,7 +113,7 @@ const BlogDetails = () => {
       <h3>Post Comments</h3>
 
       {comments.map((comment, index) => {
-        return <Comments key={index} comment_text={comment.comment_text} comment_author={comment.comment_author} commented_date={comment.commented_date}/>;
+        return <Comments key={index} postId={post.id} id={comment.id} comment_text={comment.comment_text} comment_author={comment.comment_author} commented_date={comment.commented_date}/>;
       })}
 
       
