@@ -5,8 +5,9 @@ import { AuthContext } from "../../Context/AuthContext";
 import axios from "axios";
 
 const EditComment = () => {
-  const { commentId } = useParams();
+
   const { postId } = useParams();
+  const { commentId } = useParams();
 
   const [comment, setComment] = useState(null);
   const [error, setError] = useState("");
@@ -65,13 +66,15 @@ const EditComment = () => {
     <div className="edit-comment">
       {error && <p className="error-message">{error}</p>}
       {comment ? (
-        <form className="edit-comment" onSubmit={handCommentUpdate}>
+        <form className="editcomment-form" onSubmit={handCommentUpdate}>
           <h2>Update Comment</h2>
           <textarea
             value={comment.comment_text}
-            onChange={(e) => setComment({ ...comment, content_text: e.target.value })}
+            onChange={(e) => setComment({ ...comment, 
+              comment_text: e.target.value })
+            }
           />
-         
+
           <button type="submit">Update Comment</button>
         </form>
       ) : (

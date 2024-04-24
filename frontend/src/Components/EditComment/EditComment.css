@@ -1,0 +1,33 @@
+.edit-comment{
+    min-height: 80vh;
+
+}
+.error-message{
+    text-align: center;
+    color: #fff;
+    background: #D20062;
+}
+.editcomment-form{
+    height: 300px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    /* border: 1px solid #0C0C0C; */
+    border-radius: 30px;
+    background: #F2613F;
+}
+.editcomment-form h2{
+    padding: 4px 8px;
+    text-align: center;
+}
+.editcomment-form textarea{
+    width: 100%;
+}
+.editcomment-form button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+}

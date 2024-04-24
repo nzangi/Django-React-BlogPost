@@ -33,7 +33,7 @@ const Comments = (props) => {
           isPostAuthor ? (
             <>
                 <Link className='edit-button' to={`/post/editcomment/${props.postId}/${props.id}`}>Edit</Link>
-                <Link className='delete-button' to={`/post/deletecomment/${props.id}`}>Delete</Link>
+                <Link className='delete-button' to={`/post/deletecomment/${props.postId}/${props.id}`}>Delete</Link>
             </>
               
           ) : null

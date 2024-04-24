@@ -61,7 +61,7 @@ const DeletePost = () => {
 
   return (
     <div className='delete-post'>
-      <form>
+      <form className='form-delete'>
         {post && <h6>Are you sure you want to delete {post.title}</h6>}
         <div className='buttons'>
             <button type='submit' onClick={handleCancelButton}>Cancel</button>

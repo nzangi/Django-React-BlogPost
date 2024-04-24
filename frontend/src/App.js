@@ -27,7 +27,7 @@ function App() {
           <Route path='/post/:postId' element={<BlogDetail/>}/>
           <Route path='/post/editpost/:postId' element={<EditPost/>}/>
           <Route path='/post/editcomment/:postId/:commentId' element={<EditComment/>}/>
-          <Route path='/post/deletecomment/:commentId' element={<DeleteComment/>}/>
+          <Route path='/post/deletecomment/:postId/:commentId' element={<DeleteComment/>}/>
           <Route path='/post/deletepost/:postId' element={<DeletePost/>}/>
           <Route path='/account' element={<UserAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
