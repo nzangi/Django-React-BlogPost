@@ -1,0 +1,26 @@
+.account{
+    width: 400px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.account-details{
+    margin-left: auto;
+    margin-right: auto;
+}
+.account-details img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.account-details p{
+    font-size: 20px;
+}
+.account-details a{
+    background: #0E46A3;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+}

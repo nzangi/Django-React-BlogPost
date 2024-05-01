@@ -7,24 +7,24 @@ import { AuthContext } from '../../Context/AuthContext';
 
 const Account = () => {
 
-  const [account,setAccount] = useState(false);
-  const [accountDetails,setAccountDetails] = useState();
+  const [account, setAccount] = useState(false);
+  const [accountDetails, setAccountDetails] = useState();
 
   const [error, setError] = useState("");
 
   const postAuthor = localStorage.getItem("userLoginUsername");
   const token = localStorage.getItem("userLoginResponseToken");
-  const {setIsLoggedIn} = useContext(AuthContext);
+  const { setIsLoggedIn } = useContext(AuthContext);
 
 
   // create and update the account here
-  useEffect(()=>{
+  useEffect(() => {
     fetchAccountDeatils()
-  },[])
-  const fetchAccountDeatils = async () =>{
+  }, [])
+  const fetchAccountDeatils = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/account/update_profile/`,{
-        headers:{
+      const response = await axios.get(`http://127.0.0.1:8000/account/update_profile/`, {
+        headers: {
           Authorization: `Token ${token}`
         }
       });
@@ -37,20 +37,20 @@ const Account = () => {
     }
   }
   return (
-    <div>
+    <div className='account'>
       {
         account ? (
-          <div>
-              <p>{accountDetails.username}</p>
-              <p>{accountDetails.email}</p>
-              <p>{accountDetails.title}</p>
-              <p>{accountDetails.description}</p>
-              <img src={`http://127.0.0.1:8000${accountDetails.image}`}/>
+          <div className='account-details'>
+            <img src={`http://127.0.0.1:8000${accountDetails.image}`} />
+            <h6>Your Username <p>{accountDetails.username}</p></h6>
+            <h6>Your E-Mail <p>{accountDetails.email}</p></h6>
+            <h6>Title <p>{accountDetails.title}</p></h6>
+            <h6>Bio <p>{accountDetails.description}</p></h6>
+            <Link to={`/update-account`}>Update Account</Link>
           </div>
-        ):(
-          <div>
-            You Have no Account details
-            Create One
+        ) : (
+          <div className='create-account'>
+            <Link to={`/create-account`}>Create Account</Link>
           </div>
         )
       }

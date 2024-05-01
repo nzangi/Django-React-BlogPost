@@ -14,6 +14,8 @@ import EditPost from './Components/EditPost/EditPost';
 import DeletePost from './Components/DeletePost/DeletePost';
 import EditComment from './Components/EditComment/EditComment';
 import DeleteComment from './Components/DeleteComment/DeleteComment';
+import CreateAccount from './Components/CreateAccount/CreateAccount';
+import UpdateAccount from './Components/UpdateAccount/UpdateAccount';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path='/post/deletecomment/:postId/:commentId' element={<DeleteComment/>}/>
           <Route path='/post/deletepost/:postId' element={<DeletePost/>}/>
           <Route path='/account' element={<UserAccount/>}/>
+          <Route path='/create-account' element={<CreateAccount/>}/>
+          <Route path='/update-account' element={<UpdateAccount/>}/>
           <Route path='/newpost' element={<UserNewPost/>}/>
           <Route path='/register' element={<RegisterUser/>}/>
           <Route path='/logout' element={<LogoutUser/>}/>
