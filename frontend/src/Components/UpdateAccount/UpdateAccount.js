@@ -7,6 +7,7 @@ import axios from 'axios';
 const UpdateAccount = () => {
   const [account, setAccount] = useState(null);
   const [error, setError] = useState("");
+  const [message, setMessage] = useState('')
   const { setIsLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -31,6 +32,10 @@ const UpdateAccount = () => {
     }
   }
 
+  // handleImageChange = (e) =>{
+  //   setAccount({ ...account, image: e.target.files[0] })
+  // }
+
   const handleAccountUpdate = async (e) => {
     e.preventDefault();
     if (!account) {
@@ -39,11 +44,15 @@ const UpdateAccount = () => {
 
     try {
       const response = await axios.put(`http://127.0.0.1:8000/account/update_profile/`, {
-        headers: {
-          Authorization: `Token ${token}`,
-          'content-type': 'multipart/form-data',
-        }
-      });
+        username: account.username, email: account.email, title: account.title, description: account.description, image: account.image
+      },
+        {
+          headers: {
+            Authorization: `Token ${token}`,
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        setMessage(response.data.message)
       setIsLoggedIn(true);
       navigate("/account");
     } catch (error) {
@@ -54,6 +63,7 @@ const UpdateAccount = () => {
 
   return (
     <div className='update'>
+      {message && <p className='update-message'>{message}</p>}
       {account ? (
         <form className='account-form' onSubmit={handleAccountUpdate}>
           <h2>Update Your Account</h2>
@@ -79,7 +89,7 @@ const UpdateAccount = () => {
           <p>
             <img src={`http://127.0.0.1:8000${account.image}`}></img>
             <input type='file'
-              accept='image/png,image/jpeg' onChange={(e) => setAccount({ ...account, image: e.target.files[0] })}
+              accept="image/png, image/jpeg, image/jpg" onChange={(e) => setAccount({ ...account, image: e.target.files[0] })}
             />
 
           </p>

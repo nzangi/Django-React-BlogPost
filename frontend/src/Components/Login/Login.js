@@ -76,7 +76,7 @@ const Login = () => {
                         <button className='btn btn-primary'>
                             {loggedInUser ? 'Logging In ...' : 'Login'}
                         </button>
-                        <p>Do not have have an account? <span>Register Here</span> <Link to='/register'>Sign Up</Link></p>
+                        <p>Do not have have an account? <span><Link to='/register'>Sign Up</Link></span> </p>
                     </div>
                 </form>
 

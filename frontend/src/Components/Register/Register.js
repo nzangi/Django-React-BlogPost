@@ -5,24 +5,26 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Register = () => {
-    const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirm_passowrd, setConfirm_passowrd] = useState('')
-    const [error, setError] = useState('')
-    const [registering,SetIsRegistering] = useState(false)
-    const navigate = useNavigate()
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirm_passowrd, setConfirm_passowrd] = useState('');
+    const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
+    const [registering,SetIsRegistering] = useState(false);
+    const navigate = useNavigate();
 
 
 
     const handleRegister = async (e) =>{
-        e.preventDefault()
-        SetIsRegistering(true)
+        e.preventDefault();
+        SetIsRegistering(true);
         try {
             const response = await axios.post(`http://127.0.0.1:8000/users/register/`,{
                 username,email,password,confirm_passowrd
             })
-            setError(response.data.error)
+            setError(response.data.error);
+            setMessage(response.data.message);
             navigate('/login')
         } catch (error) {
             setError('Could not handle register')
@@ -38,6 +40,7 @@ const Register = () => {
         <div className='register-div'>
             <div className='container'>
                 {error && <p className='error-message'>{error}</p>}
+                {message && <p className='register-message'>{message}</p>}
                 <form onSubmit={handleRegister} className='register-form' >
                     <h1>Register</h1>
                     <div className='form-group'>
@@ -51,7 +54,7 @@ const Register = () => {
                     <button className='btn btn-primary'>
                         { registering ? 'Registering ...':'Register'}
                     </button>
-                        <p>Already have an account? <span>Login  Here</span> <Link to='/login'>Sign In</Link></p>
+                        <p>Already have an account? <span><Link to='/login'>Sign In</Link></span></p>
                     </div>
                 </form>
 
