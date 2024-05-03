@@ -1,11 +1,11 @@
-# Django React Blog Post
+# Django React BlogPost
 <img src="images/image-preview.png" alt="image-preview">
 
 The Project is made of a backend Using Django Rest Framework and Frontend using React
 
 ## How to run the project backend
 On the main folder, change directory to backend
-Then you can insatll the requirement on the requirement.txt
+Then you can install the requirement on the requirement.txt
 Make sure that the server is always running
 1. `python install requirement.txt`
 2. `python manage.py runserver`, the server opens at `http://127.0.0.1:8000`
@@ -23,10 +23,10 @@ Now you can access the frontend and interact with the system
 
 
 ## Project Desc : BlogPost Web Application 
-The project uses Django-Rest_Framework for backend,PostgresSQL 
+The project uses Django Rest Framework for backend,PostgresSQL 
 for database and React Js for frontend. The system will enable users to post
 ,edit their post,delete, comment on other peoples posta and comments.
-It gives users a user freindly system where teh users can interact with the system
+It gives users a user friendly system where teh users can interact with the system
 
 ## Features
 - **User Management**: Easily add, update, and delete user post information.
@@ -36,7 +36,7 @@ It gives users a user freindly system where teh users can interact with the syst
 - **Role-Based Access Control**: Define roles and permissions according to logged in user.
 
 ## Installation 
-1. clone the repository on : $ git clone https://github.com/nzangi/Django-React-BlogPost.git
+1. Clone the repository on : $ git clone https://github.com/nzangi/Django-React-BlogPost.git
 2. Open the project using your favourite test editor like VS Code or PyCharm.
 3. Make sure you are in the BlogPost directory. <br>
 4. Configure the PostgreSQL database connection is settings.py (check the Database section for more information). <br>
@@ -47,6 +47,23 @@ python manage.py runserver
 6. Run the frontend by navigating to frontend folder then
 ```
 npm start
+```
+7. Check project at `http://localhost:3000`
+
+## Database 
+
+PostgreSQL can be used as the database for this project. 
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Your Database Name',
+        'USER': 'Your PostgreSQL username',
+        'PASSWORD': 'Your PostgreSQL password',
+        'HOST': 'localhost',
+        'PORT': 'Port Number',
+    }
+}
 ```
 
 ## Frontend Preview
