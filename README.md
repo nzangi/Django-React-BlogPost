@@ -40,11 +40,11 @@ It gives users a user freindly system where teh users can interact with the syst
 2. Open the project using your favourite test editor like VS Code or PyCharm.
 3. Make sure you are in the BlogPost directory. <br>
 4. Configure the PostgreSQL database connection is settings.py (check the Database section for more information). <br>
-5. Run the Backend code by cd/backend then
+5. Run the Backend code by navigating to backend folder then
 ```
 python manage.py runserver
 ```
-6. Run the frontend by cd to frontend then
+6. Run the frontend by navigating to frontend folder then
 ```
 npm start
 ```
