@@ -49,7 +49,7 @@ python manage.py runserver
 npm start
 ```
 
-## Frontend
+## Frontend Preview
 ### The user can register into the system
 <img src="images/register-user.png" alt="image-preview">
 
