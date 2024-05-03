@@ -22,7 +22,7 @@ Install the dependencies
 Now you can access the frontend and interact with the system
 
 
-## Project Desc : Business Management Web Application 
+## Project Desc : BlogPost Web Application 
 The project uses Django-Rest_Framework for backend,PostgresSQL 
 for database and React Js for frontend. The system will enable users to post
 ,edit their post,delete, comment on other peoples posta and comments.
