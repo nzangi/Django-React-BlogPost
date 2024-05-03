@@ -22,7 +22,7 @@ Install the dependencies
 Now you can access the frontend and interact with the system
 
 
-## Project Desc : BlogPost Web Application 
+## Project Description : BlogPost Web Application 
 The project uses Django Rest Framework for backend,PostgresSQL 
 for database and React Js for frontend. The system will enable users to post
 ,edit their post,delete, comment on other peoples posta and comments.
@@ -52,7 +52,9 @@ npm start
 
 ## Database 
 
-PostgreSQL can be used as the database for this project. 
+PostgreSQL will be used as the database for this project.<br>
+The database connection can be configured in the settings.py file, 
+with the appropriate values for the following properties: <br>
 ```
 DATABASES = {
     'default': {
