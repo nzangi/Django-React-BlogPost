@@ -18,9 +18,9 @@ def create_user_profile(request):
         profile_serializer = ProfileSerializer(data=request.data)
         if profile_serializer.is_valid():
             profile_serializer.save(profile_user=request.user)
-            return Response({'message':'Profile was sucessfully updated','profile_serializer':profile_serializer.data},status=status.HTTP_200_OK)
+            return Response({'message':'Profile was sucessfully created','profile_serializer':profile_serializer.data},status=status.HTTP_200_OK)
         else:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Profile was not created sucessfully.'},status=status.HTTP_400_BAD_REQUEST)
         
         
 @api_view(['GET','POST','PUT'])
