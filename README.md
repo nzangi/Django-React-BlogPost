@@ -7,7 +7,7 @@ The Project is made of a backend Using Django Rest Framework and Frontend using 
 On the main folder, change directory to backend
 Then you can install the requirement on the requirement.txt
 Make sure that the server is always running
-1. `python install requirement.txt`
+1. `pip install requirement.txt`
 2. `python manage.py runserver`, the server opens at `http://127.0.0.1:8000`
 
 ## How to run the project frontend

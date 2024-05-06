@@ -11,13 +11,15 @@ from django.db import IntegrityError
 
 # Create your views here.
 
-@api_view(['POST'])
+@api_view(['POST','PATCH'])
 @permission_classes([IsAuthenticated])
 def create_user_profile(request):
     if request.method == 'POST':
         profile_serializer = ProfileSerializer(data=request.data)
+        
         if profile_serializer.is_valid():
             profile_serializer.save(profile_user=request.user)
+            
             return Response({'message':'Profile was sucessfully created','profile_serializer':profile_serializer.data},status=status.HTTP_200_OK)
         else:
             return Response({'error': 'Profile was not created sucessfully.'},status=status.HTTP_400_BAD_REQUEST)

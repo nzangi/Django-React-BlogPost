@@ -30,5 +30,4 @@ class ProfileSerializer(serializers.ModelSerializer):
         instance.save()
         user.save()
 
-
         return instance

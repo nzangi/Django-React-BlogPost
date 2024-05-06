@@ -47,6 +47,7 @@ const Account = () => {
             <h6>Title <p>{accountDetails.title}</p></h6>
             <h6>Bio <p>{accountDetails.description}</p></h6>
             <Link to={`/update-account`}>Update Account</Link>
+
           </div>
         ) : (
           <div className='create-account'>
