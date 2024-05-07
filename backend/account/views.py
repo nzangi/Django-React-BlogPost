@@ -15,7 +15,9 @@ from django.db import IntegrityError
 @permission_classes([IsAuthenticated])
 def create_user_profile(request):
     if request.method == 'POST':
-        profile_serializer = ProfileSerializer(data=request.data)
+        profile_serializer = ProfileSerializer(data=request.data,context={'request': request})
+        print(profile_serializer)
+        print(request.user)
         
         if profile_serializer.is_valid():
             profile_serializer.save(profile_user=request.user)
