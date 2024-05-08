@@ -15,15 +15,16 @@ from django.db import IntegrityError
 @permission_classes([IsAuthenticated])
 def create_user_profile(request):
     if request.method == 'POST':
-        profile_serializer = ProfileSerializer(data=request.data,context={'request': request})
+        profile_serializer = ProfileSerializer(data=request.data, context={'request': request})
         print(profile_serializer)
-        print(request.user)
+        print(request.data)
         
         if profile_serializer.is_valid():
-            profile_serializer.save(profile_user=request.user)
+            profile_serializer.save()
             
             return Response({'message':'Profile was sucessfully created','profile_serializer':profile_serializer.data},status=status.HTTP_200_OK)
         else:
+            print("Serializer errors:", profile_serializer.errors)
             return Response({'error': 'Profile was not created sucessfully.'},status=status.HTTP_400_BAD_REQUEST)
         
         
@@ -44,6 +45,8 @@ def update_profile(request):
                 return Response({'message':'Account details updated sucessfully','account':profile_serializer.data},status=status.HTTP_200_OK)
             except IntegrityError:
                 return Response({'error': 'Username or email already exists.'}, status=status.HTTP_400_BAD_REQUEST)
-        return Response(profile_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        else:
+            print("Serializer errors:", profile_serializer.errors)
+            return Response(profile_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
 
